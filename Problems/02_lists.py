@@ -62,18 +62,16 @@ print(max(my_number_list, key=my_number_list.count))
 
 # Find the number of prime numbers in num_list?
 # Hint: One way is to just start removing the ones that aren't
+# DOES NOT WORK!!!!
 from Problems import number_list
 my_number_list2 = number_list.num_list
-
 for num in my_number_list2:
     num_of_primes = 0
     for i in range(2, num):
-        if (num % i) == 0:
+        if num % i == 0:
             del my_number_list2[my_number_list2.index(num)]
+    print(my_number_list2)
     print(len(my_number_list2))
-    else:
-        num_of_primes += 1
-    print(num_of_primes)
 
 # Find the number of palindromes
 # Hint: This may be easier to do with strings
@@ -84,9 +82,3 @@ for i in range(len(my_number_list)):
         num_of_palindromes += 1
 
 print(num_of_palindromes)
-
-
-
-# HANGMAN
-abcs = [chr(x) for x in range(65, 65 + 26)]
-print(abcs)
