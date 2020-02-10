@@ -49,7 +49,7 @@ key = "VARVARA TEMPEST"
 while i < (len(villains) - 1) and key != villains[i]:
     i += 1
 
-if i < len(villains) - 1:
+if i < (len(villains) - 1):
     print("Found", key, "at position", i)
 else:
     print(key, "not found.")
@@ -66,7 +66,7 @@ def linear_search(key, my_list):
     while i < (len(my_list) - 1) and key.upper() != my_list[i]:
         i += 1
 
-    if i < len(villains) - 1:
+    if i < (len(villains) - 1):
         print("Found", key, "at position", i)
         return True
     else:
