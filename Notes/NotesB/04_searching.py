@@ -116,3 +116,5 @@ file = open("../resources/alice_in_wonderland")
 for line in file:
     line = line.strip().upper()
     words = split_line(line)
+    for word in words:
+        print(word)
