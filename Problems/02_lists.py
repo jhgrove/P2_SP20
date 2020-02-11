@@ -52,10 +52,24 @@ print(top_ten)
 
 # PROBLEM 4 (4pts)
 # Find the number which appears most often in num_list?
-
+'''
 from Problems import number_list
 my_number_list = number_list.num_list
 print(max(my_number_list, key=my_number_list.count))
+'''
+
+from Problems import number_list
+my_number_list = number_list.num_list
+
+appearances = 0
+number = 0
+
+for n in my_number_list:
+    if my_number_list.count(n) > appearances:
+        appearances = my_number_list.count(n)
+        number = n
+
+print(number)
 
 # CHALLENGE PROBLEMS (2pts)
 # TOUGH PROBLEMS, BUT FEW POINTS
