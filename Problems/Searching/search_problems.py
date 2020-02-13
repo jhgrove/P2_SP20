@@ -40,7 +40,6 @@ for line2 in file2:
     words2 = split_line(line2)
     for word2 in words2:
         my_list2.append(word2)
-print(my_list2)
 print("Total Word Count:", len(my_list2), "words.")
 
 total_length = 0
@@ -51,10 +50,17 @@ for i in my_list2:
 print("Average Word Length:", total_length // len(my_list2), "letters.")
 
 # 3.  (3pts) How many times does the name Alice appear in Alice in Wonderland?
-
-
+num_of_alice = 0
+for i in my_list2:
+    if i == "ALICE":
+        num_of_alice += 1
+print("Alice was found", num_of_alice, "times.")
 
 # 4.  (6pts) Find the most frequently occurring seven letter word in "AliceInWonderLand.txt"
+for i in my_list2:
+    if len(i) != 7:
+        del my_list2[my_list2.index(i)]
+print(my_list2)
 
 
 # 5.  (2pts, small points challenge problem)

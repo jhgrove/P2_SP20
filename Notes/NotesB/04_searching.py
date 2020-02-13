@@ -102,7 +102,7 @@ else:
 
 # GIFTED FUNCTION
 # returns a list of words ine each line
-
+'''
 import re  # regular expression
 
 def split_line(line):
@@ -118,3 +118,4 @@ for line in file:
     words = split_line(line)
     for word in words:
         print(word)
+'''
