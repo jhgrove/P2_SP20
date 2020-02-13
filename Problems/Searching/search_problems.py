@@ -11,9 +11,19 @@ def split_line(line):
     # uses regular expressions to split line of text into word list
     return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
 
+
 # 1.  (6pts) Write code which finds and prints the longest word in the provided dictionary. If there are more than
 # one longest word, print them all.
+file = open("../resources/alice_in_wonderland")
 
+word_list = []
+
+for line in file:
+    line = line.strip().upper()
+    words = split_line(line)
+    for word in words:
+        word_list.append(word)
+        print(word_list)
 
 # 2.  (8pts) Write code which finds the total word count AND average word length in "AliceInWonderLand.txt"
 
