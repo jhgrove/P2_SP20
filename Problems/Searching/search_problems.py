@@ -48,7 +48,7 @@ for i in my_list2:
     word_len = len(i)
     total_length += word_len
 
-print("Average Word Length:", total_length // len(my_list2), "letters")
+print("Average Word Length:", total_length / len(my_list2), "letters")
 
 # 3.  (3pts) How many times does the name Alice appear in Alice in Wonderland?
 num_of_alice = 0
