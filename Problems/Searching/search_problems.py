@@ -91,7 +91,10 @@ print("Cat Found:", num_of_cat, "times")
 
 # How many times does "Cheshire" immediately followed by "Cat" occur?
 num_of_cc = 0
+last_cheshire = 0
 for i in my_list2:
-    if i == "CHESHIRE" and i + 1 == "CAT":
+    if i == "CHESHIRE":
+        last_cheshire = 1
+    elif last_cheshire == 1 and i == "CAT":
         num_of_cc += 1
-print("Cheshire Cat Found:", num_of_cc, "times")
+print("Cheshire Cat Found:", num_of_cat - num_of_cc, "times")
