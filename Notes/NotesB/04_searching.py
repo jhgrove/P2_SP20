@@ -36,7 +36,6 @@ with open('../resources/super_villains.txt') as f:
 
 print(villains)
 
-
 # Linear Search
 
 # Python way
@@ -53,6 +52,7 @@ if i < (len(villains) - 1):
     print("Found", key, "at position", i)
 else:
     print(key, "not found.")
+
 
 # Make a function out of it!
 def linear_search(key, my_list):
@@ -73,10 +73,8 @@ def linear_search(key, my_list):
         print(key, "not found.")
         return False
 
+
 print(linear_search("Lavinia Nyx", villains))
-
-
-
 
 # Binary Search
 
@@ -98,7 +96,6 @@ if found:
     print(key, "found at position", middle_pos)
 else:
     print(key, "was not found")
-
 
 # GIFTED FUNCTION
 # returns a list of words ine each line

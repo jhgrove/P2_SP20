@@ -26,7 +26,6 @@ for number in my_list:
         continue  # skips the rest of this iteration
     print(number)
 
-
 # FOR ELSE
 for number in my_list:
     if number == 200:
@@ -36,9 +35,7 @@ for number in my_list:
 else:
     print("You naturally finished the loop")
 
-
 # Add me as a collaborator on Github
-
 
 
 # HANGMAN HELP!!!

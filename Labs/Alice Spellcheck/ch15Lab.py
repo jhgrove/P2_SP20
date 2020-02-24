@@ -31,18 +31,10 @@ file.close()
 
 print("\n--- Linear Search ---")
 alice_file = open("AliceInWonderLand200.txt")
-alice_list = []
+
 for line in alice_file:
     line = line.strip().upper()
     words = split_line(line)
     for word in words:
-        alice_list.append(word)
-print(alice_list)
-
-
-# Using a linear search, check the current word against the words in the dictionary.
-# The linear search is just a few lines long.
-# When comparing to the word to the other words in the dictionary, convert the word to uppercase.
-# In your while loop just use word.upper() instead of word for the key.
-# This linear search will exist inside the for loop created in the prior step.
-# We are looping through each word in the dictionary, looking for the current word in the line that we just read in.
+        if not dictionary_list.__contains__(word):
+            print(word)
