@@ -1,5 +1,6 @@
 """
-Complete the chapter lab at https://docs.google.com/document/d/1KjrNiE3mUbaeyTPpaTesAlnVYkp0KkkM-17oOKqscjw/edit?usp=sharing
+James Grove
+Alice Spellcheck
 """
 
 # Successful linear spellcheck (10pts)
@@ -15,55 +16,96 @@ def split_line(line):
     return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
 
 
-# Challenge:  Find all words that occur in Alice through the looking glass that do NOT occur in Wonderland.
-
-file = open("dictionary.txt")
+dict_file = open("dictionary.txt")
 dictionary_list = []
-
-for line in file:
+for line in dict_file:
     line = line.strip().upper()
     words = split_line(line)
     for word in words:
         dictionary_list.append(word)
 print(dictionary_list)
+dict_file.close()
 
-file.close()
-
+# LINEAR SEARCH
 print("\n--- Linear Search ---")
 alice_file = open("AliceInWonderLand200.txt")
-
+line_number = 0
 for line in alice_file:
+    line_number += 1
     line = line.strip().upper()
     words = split_line(line)
     for word in words:
-        if not dictionary_list.__contains__(word):
-            print(word)
-file.close()
-# add steps 13 and 14
+        found = False
+        there = 0
+        while not found:
+            for i in dictionary_list:
+                if i == word:
+                    there += 1
+            if there == 0:
+                print(word, "on line", line_number)
+            found = True
+alice_file.close()
 
+# BINARY SEARCH
 print("\n--- Binary Search ---")
 alice_file = open("AliceInWonderLand200.txt")
-file = open("dictionary.txt")
+line_number = 0
 
 for line in alice_file:
+    line_number += 1
     line = line.strip().upper()
     words = split_line(line)
     for word in words:
-        key = word
         lower_bound = 0
         upper_bound = len(dictionary_list) - 1
         found = False
 
         while lower_bound <= upper_bound and not found:
             middle_pos = (upper_bound + lower_bound) // 2
-            if dictionary_list[middle_pos] < key:
+            if dictionary_list[middle_pos] < word:
                 lower_bound = middle_pos + 1
-            elif dictionary_list[middle_pos] > key:
+            elif dictionary_list[middle_pos] > word:
                 upper_bound = middle_pos - 1
             else:
                 found = True
 
         if not found:
-            print(key)
+            print(word, "on line", line_number)
+alice_file.close()
 
-file.close()
+# Challenge: Find all words that occur in Alice through the looking glass that do NOT occur in Wonderland.
+print("\n--- Challenge ---")
+alice_file = open("AliceInWonderLand.txt")
+alice_list = []
+line_number = 0
+
+for line in alice_file:
+    line = line.strip().upper()
+    words = split_line(line)
+    for word in words:
+        alice_list.append(word)
+alice_list.sort()
+
+looking_file = open("AliceThroughTheLookingGlass.txt")
+
+for line in looking_file:
+    line_number += 1
+    line = line.strip().upper()
+    words = split_line(line)
+    for word in words:
+        lower_bound = 0
+        upper_bound = len(alice_list) - 1
+        found = False
+
+        while lower_bound <= upper_bound and not found:
+            middle_pos = (upper_bound + lower_bound) // 2
+            if alice_list[middle_pos] < word:
+                lower_bound = middle_pos + 1
+            elif alice_list[middle_pos] > word:
+                upper_bound = middle_pos - 1
+            else:
+                found = True
+
+        if not found:
+            print(word, "on line", line_number)
+alice_file.close()
