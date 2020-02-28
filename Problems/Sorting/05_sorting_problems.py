@@ -19,7 +19,7 @@ my_list = [[i[-1], i[2]] for i in data]
 my_list.sort(reverse=True, key=lambda a: a[0])
 for i in my_list[:10]:
     num += 1
-    print(num, i[1])
+    print(num, i[1], "had", i[0], "points.")
 print()
 
 # 3  How many career points did Kobe Bryant have? Add up all of his seasons. (4pts)
