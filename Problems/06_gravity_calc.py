@@ -12,9 +12,20 @@
 # (3pts) takes the inputs for mass 1, mass 2, and distance between the two objects (m1, m2, and r)
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (2pts) keeps asking for inputs until they are valid (see while loop from notes)
-# (3pts) calculates the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
+# (3pts) calculates the force of gravity in Newtons and print the result to the user
+# in scientific notation to two decimals.
 
-
-
-
-
+done = False
+while not done:
+    try:
+        m1 = int(input("Enter mass 1: "))
+        m2 = int(input("Enter mass 2: "))
+        r = int(input("Enter distance between the two objects: "))
+        f = (6.67e-11 * (m1 * m2) / r ** 2)
+        done = True
+    except ValueError as e:
+        print("Invalid conversion")
+        print(e)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+print("{:.2e}".format(f), "newtons")
