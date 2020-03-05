@@ -25,7 +25,7 @@ while not done:
         done = True
     except ValueError as e:
         print("Invalid conversion")
-        print(e)
+        print("Error:", e, "\n")
     except ZeroDivisionError:
-        print("Cannot divide by zero")
+        print("Cannot divide by zero\n")
 print("{:.2e}".format(f), "newtons")
