@@ -22,10 +22,9 @@ while not done:
         m2 = int(input("Enter mass 2: "))
         r = int(input("Enter distance between the two objects: "))
         f = (6.67e-11 * (m1 * m2) / r ** 2)
+        print("{:.2e}".format(f), "newtons")
         done = True
-    except ValueError as e:
-        print("Invalid conversion")
-        print("Error:", e, "\n")
+    except ValueError:
+        print("Invalid conversion, try a different number.\n")
     except ZeroDivisionError:
-        print("Cannot divide by zero\n")
-print("{:.2e}".format(f), "newtons")
+        print("Sorry, cannot divide by zero.\n")
