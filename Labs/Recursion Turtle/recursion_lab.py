@@ -23,7 +23,7 @@ my_turtle.speed(0)
 my_screen = turtle.Screen()
 my_screen.bgcolor('white')
 
-'''
+
 # PART 1 - H Tree
 
 
@@ -42,38 +42,10 @@ def h_tree(x, y, height, width, depth):
 
 
 h_tree(0, 0, my_screen.window_height(), my_screen.window_width(), 5)
-
-my_screen.exitonclick()
-'''
-'''
-endpoints = [[0, 300], [-300, -150], [300, -150]]
-triangle_num = 5
+my_screen.clear()
+my_turtle.goto(0, 0)
 
 
-def big_triangle(endpoints, my_turtle):
-    my_turtle.up()
-    my_turtle.goto(endpoints[0][0], endpoints[0][1])
-    my_turtle.down()
-    my_turtle.goto(endpoints[1][0], endpoints[1][1])
-    my_turtle.goto(endpoints[2][0], endpoints[2][1])
-    my_turtle.goto(endpoints[0][0], endpoints[0][1])
-
-
-def halfway(x2, y2):
-    return [(x2[0] + y2[0]) / 2, (x2[1] + y2[1]) / 2]
-
-
-def small_triangles(endpoints, triangle_num, my_turtle):
-    big_triangle(endpoints, my_turtle)
-    if triangle_num > 0:
-        small_triangles([endpoints[0], halfway(endpoints[0], endpoints[1]), halfway(endpoints[0], endpoints[2])], triangle_num - 1, my_turtle)
-        small_triangles([endpoints[1], halfway(endpoints[0], endpoints[1]), halfway(endpoints[1], endpoints[2])], triangle_num - 1, my_turtle)
-        small_triangles([endpoints[2], halfway(endpoints[2], endpoints[1]), halfway(endpoints[0], endpoints[2])], triangle_num - 1, my_turtle)
-
-
-small_triangles(endpoints, triangle_num, my_turtle)
-'''
-'''
 def draw(length, depth):
     if depth == 0:
         for i in range(0, 3):
@@ -94,9 +66,18 @@ def draw(length, depth):
 
 
 draw(300, 5)
-'''
+my_screen.clear()
 
 
+def spiral(length, depth):
+    if length > 0:
+        if depth > 0:
+            my_turtle.width(depth)
+            my_turtle.forward(length)
+            my_turtle.right(90)
+            spiral(length - 5, depth - .125)
 
+
+spiral(300, 8)
 
 my_screen.exitonclick()
