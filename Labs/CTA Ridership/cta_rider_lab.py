@@ -1,4 +1,4 @@
-"""
+'''
 CTA Ridership (25pts)
 
 Get the csv from the following data set.
@@ -13,13 +13,12 @@ It has been updated with 2018 data, but not yet with 2019 unfortunately
 4  Add a title and label your axes. (4pts)
 5  Add a legend to show data represented by each of the three lines. (4pts)
 6  What trend or trends do you see in the data?  Offer a hypotheses which might explain the trend(s). Just add a comment here to explain. (2pts)
-"""
+'''
 
 import csv
 
-with open("CTA_-_Ridership_-_Annual_Boarding_Totals.csv") as f:
+with open("CTA_-_Ridership_-_Annual_Boarding_Totals (1).csv") as f:
     cr = csv.reader(f)
     data = list(cr)
 
 print(data)
-
