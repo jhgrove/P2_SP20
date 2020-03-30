@@ -28,16 +28,16 @@ for country in data:
         firearms_100.append(firearms)
         countries.append(name)
     except:
-        print(country[0]), "data is inadequate."
+        print(country[0], "data is inadequate.")
 
 print(countries)
 
-plt.figure("Homicides per Firearm Worldwide")  # add figsize
+plt.figure("Homicides per Firearm Worldwide", figsize=(10, 6))  # add figsize
 
 plt.scatter(firearms_100, homicide_100k)
 plt.ylabel("homicides per 100k population")
 plt.xlabel("firearms per 100 people")
-plt.title("homicides vs. Gun Ownership by Country")
+plt.title("Homicides vs. Gun Ownership by Country")
 
 
 plt.annotate("MY TEXT", xy=(50, 50))
@@ -45,16 +45,6 @@ plt.annotate("MY TEXT", xy=(50, 50))
 for i in range(len(countries)):
     plt.annotate(countries[i], xy=(firearms_100[i], homicide_100k[i]))
 
-# best fit line
-p = np.polyfit(firearms_100, homicide_100k, 2)  # (x, y, order)
-print(p)
-
-x = [x for x in range(100)]
-y = [p[0] * y + p[1] for y in x]  # linear 1st order
-y = [p[0] * y ** 2 + p[1] * y + p[2] for y in x]  # 2nd order
-
-
-plt.plot(x, y)
 
 
 plt.show()
