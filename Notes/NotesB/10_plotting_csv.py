@@ -22,10 +22,8 @@ my_library = monthly_data[library_names.index('Lincoln Park')]
 my_library = [int(x) for x in my_library]
 print(my_library)
 
-library2 = monthly_data[library_names.index('Lincoln Park')]
+library2 = monthly_data[library_names.index('Bucktown-Wicker Park')]
 library2 = [int(x) for x in library2]
-
-
 
 plt.figure(1, tight_layout=True)
 month_numbers = [x for x in range(12)]
@@ -42,7 +40,6 @@ plt.title("Library Visitors 2019", fontsize=20)
 plt.ylabel('Visitors')
 plt.legend()
 
-
 plt.figure(2, tight_layout=True, figsize=(10, 7))
 
 # plot every library in Chicago YTD visitors on a bar graph
@@ -58,4 +55,3 @@ plt.title("Annual visitors to Chicago Public Libraries")
 plt.xlabel("Total Visitors")
 
 plt.show()
-
