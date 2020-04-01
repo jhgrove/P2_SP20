@@ -1,5 +1,4 @@
-
-'''
+"""
 Greenhouse gas emissions (GHG) vs. square footage for all school buildings in Chicago
 
 Data set used will be Chicago Energy Benchmark info from 2018
@@ -36,6 +35,6 @@ Maybe you can try one of the following or think up your own:
 
 
 Note 2:  This is a tough assignment to do on your own.  Do your best with what you have.  We will do
-'''
+"""
 
 
