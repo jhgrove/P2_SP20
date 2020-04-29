@@ -41,3 +41,8 @@ print(df3.types)  # data types
 # simple selection using []
 wind_speeds = df3['Wind Speed']  # index kinda like dictionary
 print(type(wind_speeds))
+
+
+# we can also slice the df using .iloc[]
+first5_stationnames = df3.iloc[:5, 0]  # rows, cols
+print(first5_stationnames)
