@@ -50,3 +50,12 @@ print(first5_stationnames)
 first_fifth_temps = df3.iloc[[0, 4], [2, 3]]
 print(first_fifth_temps)
 print(type(first_fifth_temps))
+
+
+
+# World Cup data
+import pandas as pd
+x = 5
+x  # in ipython/console, this automatically prints
+
+df = pd.read_csv('/Users/jamesgrove/PycharmProjects/P2_SP20/Notes/NotesB/world_cup_matches.csv')  # use  full path  when working in console
