@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv("/Users/alee/PycharmProjects/P2_SP20/Notes/NotesB/titanic.csv")
+df = pd.read_csv("/Users/jamesgrove/PycharmProjects/P2_SP20/Notes/NotesB/titanic.csv")
 
 df.groupby('Sex')["Survived"].sum().plot.bar()
 
